@@ -1,5 +1,5 @@
 '''
-File:Filed.py
+File:Field.py
 Description:
 Author:Lv Yifan
 StudentID: 2218040126
@@ -14,7 +14,7 @@ class Field:
     疗愈草地 – 每个战斗人员恢复5点生命值（这可以超过他们的最大生命值）
     城墙 – 无效果
     '''
-    def __init__(self,name):
+    def __init__(self, name):
         self.name = name
     def changeField(self):
         fileds = list["Toxic Wasteland","Healing Meadows","Castle Walls"]

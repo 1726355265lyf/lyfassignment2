@@ -15,13 +15,29 @@ class FrostMage(Mage):
     冰块 (IceBlock)：消耗50点魔法值，设置 iceBlock 属性为 True
     冰霜弹幕 (IceBarrage)：消耗10点魔法值，额外造成30点伤害
     '''
-    def __init__(self,iceBlock):
-        self.__iceBlock = iceBlock
-    def takeDamage(self):
-        pass
+    def __init__(self,name,maxHealth,strength,defense,ranged,magic):
+        super().__init__(name,maxHealth,strength,defense,ranged, magic)
+        self.__iceBlock = False
+    def takeDamage(self,damage):
+        if self.ice_block:
+            damage = 0
+            self.ice_block = False
+        else:
+            damage = max(0, damage - self.defense)
+
+        super().takeDamage(damage)
+        # Regenerate mana based on regen_rate
+        self.mana += self.regen_rate
     def castSpell(self):
-        pass
+        if self.mana >= 50:
+            return self.iceBlock()
+        elif self.mana >= 10:
+            return self.iceBarrage()
+        else:
+            return 0
     def iceBarrage(self):
-        pass
+        self.mana -= 10
+        return (self.magic / 4) + 30
     def iceBlock(self):
-        pass
+        self.mana -= 50
+        self.ice_block = True
