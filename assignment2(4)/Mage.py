@@ -26,4 +26,4 @@ class Mage(Combatant,ABC):
         raise TypeError("")
     def resetValues(self):
         super().resetValues()
-        self.mana = self.magic
+        self._mana = super().getMagic()

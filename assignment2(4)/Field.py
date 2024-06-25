@@ -18,9 +18,18 @@ class Field:
         self.name = name
     def changeField(self):
         fileds = list["Toxic Wasteland","Healing Meadows","Castle Walls"]
-        self.filed = random.choice(fileds)
-        return self.filed
-    def fieldEffect(self):
-        pass
+        self.name = random.choice(fileds)
+        return self.name
+    def fieldEffect(self, fighter1, fighter2):
+        if self.name == "Toxic Wasteland":
+            # 无视防御，对双方造成5点伤害
+            fighter1.takeDamage(5)
+            fighter2.takeDamage(5)
+        elif self.name == "Healing Meadows":
+            # 治疗双方5点生命值，可以超过最大生命值
+            fighter1.setHealth(fighter1.getHealth+5)
+            fighter2.setHealth(fighter1.getHealth+5)
+        elif self.name == "Castle Walls":
+            pass
     def getName(self):
         return self.name

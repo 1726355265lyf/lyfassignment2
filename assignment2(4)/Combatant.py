@@ -15,14 +15,15 @@ class Combatant:
     重置应将他们的生命值恢复到最大值。
     Details方法返回一个包含战斗人员的名字、类别和属性的字符串。
     '''
-    def __init__(self,name,maxHealth,strength,defense,ranged,magic):
+    def __init__(self,name,maxHealth,strength,defense,magic,ranged):
         self.name = name
         self.__maxHealth = maxHealth
         self.__health = maxHealth
         self.__strength = strength
         self.__defense = defense
-        self.__ranged = ranged
         self.__magic = magic
+        self.__ranged = ranged
+
 
     def details(self):
         return f"Name:{self.name},Health:{self.__health},Strength:{self.__strength},Defense:{self.__defense},Magic:{self.__magic},Ranged:{self.__ranged}"
@@ -30,14 +31,25 @@ class Combatant:
         return self.__strength
     def attackEnemy(self,enemy):
         damage = self.calculatePower()
-        enemy.takeDamage(damage)
         print(f"{self.name} attacks for {damage} damage")
+
+        enemy.takeDamage(damage)
+
     def takeDamage(self, damage):
+
         damage = damage - self.__defense
+
         if damage > 0:
-            print(f"{self.name} took {damage} damage")
+            if (self.getHealth() - damage)>0:
+                print(f"{self.name}’s defence level blocked {self.getDefense()} damage")
+                print(f"{self.name} took {damage} damage and has {self.getHealth()} remaining\n")
+            else:
+                print(f"{self.name}’s defence level blocked {self.getDefense()} damage")
+                print(f"{self.name} has been knocked out!")
         else:
+            print(f"'TIng' 0 damage!\n")
             damage = 0
+        self.setHealth(self.getHealth() - damage)
     def resetValues(self):
         self.__health = self.__maxHealth
     def getMaxHealth(self):
@@ -54,3 +66,19 @@ class Combatant:
         return self.__ranged
     def getMagic(self):
         return self.__magic
+
+
+class Ranger:
+    pass
+
+
+class Warrior:
+    pass
+
+
+class PyroMage:
+    pass
+
+
+class FrostMage:
+    pass
