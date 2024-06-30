@@ -22,7 +22,7 @@ class Ranger(Combatant):
             self.arrows -= 1
             damage = self.getRanged()
             if self.arrows == 0:
-                print(f"")
+                print(f" ")
             return damage
         else:
             return self.getStrength()
