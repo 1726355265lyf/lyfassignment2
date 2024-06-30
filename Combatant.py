@@ -1,6 +1,6 @@
 '''
 File:Combatant.py
-Description:
+Description:Combatant
 Author:Lv Yifan
 StudentID: 2218040126
 This is my own work as defined by the University's Academic Misconduct Policy
@@ -66,19 +66,3 @@ class Combatant:
         return self.__ranged
     def getMagic(self):
         return self.__magic
-
-
-class Ranger:
-    pass
-
-
-class Warrior:
-    pass
-
-
-class PyroMage:
-    pass
-
-
-class FrostMage:
-    pass
