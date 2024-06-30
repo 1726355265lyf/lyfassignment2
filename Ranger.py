@@ -1,6 +1,6 @@
 '''
 File:Ranger.py
-Description:
+Description:Ranger
 Author:Lv Yifan
 StudentID: 2218040126
 This is my own work as defined by the University's Academic Misconduct Policy

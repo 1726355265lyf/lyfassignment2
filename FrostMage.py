@@ -1,6 +1,6 @@
 '''
 File:FrostMage.py
-Description:
+Description:File:FrostMage
 Author:Lv Yifan
 StudentID: 2218040126
 This is my own work as defined by the University's Academic Misconduct Policy
@@ -22,7 +22,7 @@ class FrostMage(Mage):
         if self.__iceBlock==True:
             self._mana = self._mana + self.getMagic() / 4
             self.__iceBlock = False
-            print(f"{self.name} ice Block absorbed all the damage!")
+            print(f"{self.name} ice Block absorbed all the damage !")
             print("ice Block has faded\n")
         else:
             self._mana = self._mana + self.getMagic() / 4
