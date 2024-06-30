@@ -49,5 +49,5 @@ class Ranger(Combatant):
             print(f"{self.name} has been knocked out!")
             self.setHealth(-1)
     def details(self):
-        return f"{self.name} is a Ranger and has the following stats \nHealth:{self.getHealth()}\nStrength:{self.getStrength()}\ndefense:{self.getDefense()}\nMagic:{self.getMagic()}\nRanged:{self.getRanged()}\n "
+        return f"{self.name} is a Ranger and has the following stats\nHealth:{self.getHealth()}\nStrength:{self.getStrength()}\ndefense:{self.getDefense()}\nMagic:{self.getMagic()}\nRanged:{self.getRanged()}\n "
 
